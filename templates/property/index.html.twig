@@ -3,10 +3,34 @@
 {% block title 'Tous nos biens'%}
 
 {% block body %}
+	<div class="container p-5">
+		{{form_start(form)}}
+		<div class="form-group row">
+			<div class="col">
+				{{form_row(form.minSurface)}}
+			</div>
+			<div class="col">
+				{{form_row(form.maxPrice)}}
+			</div>
+			<div class="col">
+				<button class="btn btn-primary">Rechercher</button>
+			</div>
+		</div>
+		{{form_end(form)}}
+	</div>
 	<div class="container-fluid bg-dark text-light p-5">
 		<div class="container bg-dark p-5">
 			<h1 class="display-4">Voir tous nos biens</h1>
-			<hr>
+			<div class="row mt-4">
+				{% for property in properties %}
+					<div class="col-md-4">
+						{% include "property/_property.html.twig" %}
+					</div>
+				{% endfor %}
+			</div>
+			<div class="pagination">
+				{{ knp_pagination_render(properties) }}
+			</div>
 		</div>
 	</div>
 {% endblock %}
