@@ -35,7 +35,7 @@ class ContactNotification{
         $message = (new Email())
             ->subject('Agence : ' . $contact->getProperty()->getTitle())
             ->from('noreply@example.com')
-            ->to('contact@agence.fr')
+            ->to('contact@immo.fr')
             ->replyTo($contact->getEmail())
             ->html($this->renderer->render('emails/contact.html.twig', [
                 'contact' => $contact

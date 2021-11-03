@@ -1,0 +1,6 @@
+body > div.container-fluid.text-light.p-5 {
+    background: #222222;
+}
+body > div.container-fluid.text-light.p-5 > div {
+    background: #222222;
+}
